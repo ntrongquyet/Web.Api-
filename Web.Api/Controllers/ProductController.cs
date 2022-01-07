@@ -73,7 +73,7 @@ namespace Web.Api.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        public bool Post([FromForm] ProductRequestViewModel request)
+        public bool Post([FromBody] ProductRequestViewModel request)
         {
             var product = new Product
             {
@@ -105,7 +105,7 @@ namespace Web.Api.Controllers
         /// <returns></returns>
         [HttpPut]
         [Route("{pId}")]
-        public bool Put(int pId, [FromForm] ProductRequestViewModel request)
+        public bool Put(int pId, [FromBody] ProductRequestViewModel request)
         {
             if (pId != 0)
             {
