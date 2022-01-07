@@ -54,8 +54,10 @@ namespace Web.Api
 
             app.UseRouting();
 
-            app.UseCors("CorsPolicy");
-
+            app.UseCors(builder =>
+                       builder.AllowAnyOrigin()
+                       .AllowAnyHeader()
+                       .AllowAnyMethod());
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
